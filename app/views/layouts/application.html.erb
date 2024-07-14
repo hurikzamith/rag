@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+     <flowise-fullchatbot></flowise-fullchatbot>
+      <script type="module">
+          import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+          Chatbot.initFull({
+              chatflowid: "5e4da889-1105-476e-ac85-84a4581c747a",
+              apiHost: "https://flowise-ch4v.onrender.com",
+          })
+      </script>
+
   </body>
 </html>
